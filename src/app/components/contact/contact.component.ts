@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { environment } from '../../../environments/environment';
 
 @Component({
     selector: 'app-contact',
@@ -38,7 +39,7 @@ export class ContactComponent {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    access_key: '97a86d7e-6f2f-42a2-afee-e4127a5c42c8',
+                    access_key: environment.web3formsKey,
                     name: this.formData.name,
                     email: this.formData.email,
                     subject: this.formData.subject || 'Contact depuis le Portfolio',

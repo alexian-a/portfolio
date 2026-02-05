@@ -1,0 +1,29 @@
+<a class="card" [routerLink]="['/project', project.id]">
+  <div class="image-container" *ngIf="project.imageUrl">
+    <img [src]="project.imageUrl" [alt]="project.title" class="project-image">
+  </div>
+
+  <div class="content">
+    <div class="header">
+      <h3 class="title">{{ project.title }}</h3>
+      <span class="date" *ngIf="project.date">{{ project.date }}</span>
+    </div>
+
+    <p class="description">{{ project.description }}</p>
+
+    <!-- Technologies Chips -->
+    <div class="tech-stack" *ngIf="project.technologies?.length">
+      <span class="tech-chip" *ngFor="let tech of project.technologies">
+        {{ tech }}
+      </span>
+    </div>
+
+    <!-- Skills Badges (Footer) -->
+    <div class="skills-footer">
+      <a class="skill-badge" *ngFor="let skill of getProjectSkills()" [routerLink]="['/skill', skill.id]"
+        [style.background-color]="skill.color" [title]="skill.label" (click)="$event.stopPropagation()">
+        {{ skill.label }}
+      </a>
+    </div>
+  </div>
+</a>

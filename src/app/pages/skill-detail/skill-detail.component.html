@@ -1,0 +1,67 @@
+<div class="detail-page" *ngIf="skill">
+    <a routerLink="/" class="back-link">
+        <span class="arrow">←</span> Retour à l'accueil
+    </a>
+
+    <header class="skill-header" [style.--accent]="skill.color">
+        <div class="skill-icon">
+            <span>{{ skill.label.charAt(0) }}</span>
+        </div>
+        <h1 class="skill-title">{{ skill.label }}</h1>
+        <p class="skill-description">{{ skill.description }}</p>
+    </header>
+
+    <section class="related-projects">
+        <h2 class="section-title">Projets liés à cette compétence</h2>
+
+        <div class="projects-grid" *ngIf="relatedProjects.length > 0">
+            <a *ngFor="let project of relatedProjects" [routerLink]="['/project', project.id]" class="project-card">
+                <div class="project-image" *ngIf="project.imageUrl">
+                    <img [src]="project.imageUrl" [alt]="project.title">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">{{ project.title }}</h3>
+                    <p class="project-description">{{ project.description }}</p>
+                    <div class="skill-badges">
+                        <span *ngFor="let skillId of project.skillIds" class="skill-badge"
+                            [style.background-color]="getSkillColor(skillId) + '20'"
+                            [style.border-color]="getSkillColor(skillId)" [style.color]="getSkillColor(skillId)">
+                            {{ getSkillLabel(skillId) }}
+                        </span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="no-projects" *ngIf="relatedProjects.length === 0">
+            <p>Aucun projet n'est lié à cette compétence pour le moment.</p>
+        </div>
+    </section>
+
+    <!-- Expériences professionnelles liées -->
+    <section class="related-experiences" *ngIf="relatedExperiences.length > 0">
+        <h2 class="section-title">Expériences professionnelles liées</h2>
+
+        <div class="experiences-list">
+            <div *ngFor="let exp of relatedExperiences" class="experience-card">
+                <div class="exp-logo" *ngIf="exp.companyLogo">
+                    <img [src]="exp.companyLogo" [alt]="exp.company">
+                </div>
+                <div class="exp-initial" *ngIf="!exp.companyLogo">
+                    {{ exp.company.charAt(0) }}
+                </div>
+                <div class="exp-content">
+                    <span class="exp-period">{{ exp.period }}</span>
+                    <h3 class="exp-title">{{ exp.title }}</h3>
+                    <h4 class="exp-company">{{ exp.company }}</h4>
+                    <p class="exp-description">{{ exp.description }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="not-found" *ngIf="!skill">
+    <h1>Compétence introuvable</h1>
+    <a routerLink="/" class="back-link">Retour à l'accueil</a>
+</div>

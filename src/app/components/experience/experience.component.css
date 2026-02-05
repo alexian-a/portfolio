@@ -1,0 +1,229 @@
+.experience-section {
+    position: relative;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--accent-color), rgba(255, 255, 255, 0.1));
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 3rem;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 11px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background-color: var(--bg-primary);
+    border: 4px solid var(--accent-color);
+    border-radius: 50%;
+    z-index: 1;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.timeline-item:hover .timeline-marker {
+    transform: scale(1.2);
+    background-color: var(--accent-color);
+}
+
+.timeline-content {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.period {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.2rem 0.8rem;
+    border-radius: 100px;
+}
+
+.content-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.company-logo {
+    width: 120px;
+    height: 100px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    flex-shrink: 0;
+    order: 2;
+    /* Move to right */
+}
+
+.company-logo img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    margin: 5%;
+}
+
+.company-initial {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-color), #6366f1);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    order: 2;
+    /* Move to right */
+}
+
+.header-text {
+    flex: 1;
+    order: 1;
+    /* Keep text on left */
+}
+
+.job-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.company {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.description {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.skill-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-badge {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+    border: 1px solid;
+    font-weight: 500;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.skill-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Technologies section */
+.technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tech-chip {
+    position: relative;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-secondary);
+    padding: 0.4rem 0.9rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+.tech-chip:hover {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: var(--accent-color);
+    color: var(--text-primary);
+}
+
+/* Tooltip */
+.tech-chip .tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(20, 20, 30, 0.98);
+    color: var(--text-primary);
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    white-space: nowrap;
+    max-width: 250px;
+    white-space: normal;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 100;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Tooltip arrow */
+.tech-chip .tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: rgba(20, 20, 30, 0.98);
+}
+
+.tech-chip:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}

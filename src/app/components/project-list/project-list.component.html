@@ -1,0 +1,15 @@
+<section id="projects" class="projects-section">
+    <h2 class="section-title">Mes Projets</h2>
+
+    <app-skill-filter [skills]="skills" [selectedSkillId]="selectedSkillId" (skillSelected)="onSkillSelected($event)">
+    </app-skill-filter>
+
+    <div class="projects-grid">
+        <app-project-card *ngFor="let project of filteredProjects" [project]="project" [skills]="skills">
+        </app-project-card>
+    </div>
+
+    <div *ngIf="filteredProjects.length === 0" class="no-projects">
+        Aucun projet ne correspond à cette compétence pour le moment.
+    </div>
+</section>

@@ -1,0 +1,80 @@
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    background: linear-gradient(135deg, rgba(30, 30, 40, 0.95), rgba(20, 20, 30, 0.98));
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    will-change: transform;
+    /* GPU acceleration hint */
+}
+
+/* Simple top accent bar */
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent);
+    opacity: 0.8;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: var(--accent);
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: var(--accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover .icon-box {
+    transform: scale(1.1);
+}
+
+.skill-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.skill-card:hover .skill-title {
+    color: var(--accent);
+}
+
+.skill-desc {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}

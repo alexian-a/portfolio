@@ -1,0 +1,42 @@
+<section id="experience" class="experience-section">
+    <h2 class="section-title">Expériences Professionnelles</h2>
+
+    <div class="timeline">
+        <div class="timeline-item" *ngFor="let item of experiences">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+                <div class="content-header">
+                    <div class="company-logo" *ngIf="item.companyLogo">
+                        <img [src]="item.companyLogo" [alt]="item.company">
+                    </div>
+                    <div class="company-initial" *ngIf="!item.companyLogo">
+                        {{ item.company.charAt(0) }}
+                    </div>
+                    <div class="header-text">
+                        <span class="period">{{ item.period }}</span>
+                        <h3 class="job-title">{{ item.title }}</h3>
+                        <h4 class="company">{{ item.company }}</h4>
+                    </div>
+                </div>
+                <p class="description" [innerHTML]="formatDescription(item.description)"></p>
+
+                <!-- Technologies avec tooltips conditionnels -->
+                <div class="technologies" *ngIf="item.technologies && item.technologies.length > 0">
+                    <span class="tech-chip" *ngFor="let tech of item.technologies"
+                        [class.has-tooltip]="tech.description">
+                        {{ tech.name }}
+                        <span class="tooltip" *ngIf="tech.description">{{ tech.description }}</span>
+                    </span>
+                </div>
+
+                <div class="skill-badges">
+                    <a class="skill-badge" *ngFor="let skillId of item.skillIds" [routerLink]="['/skill', skillId]"
+                        [style.background-color]="getSkillColor(skillId) + '20'"
+                        [style.border-color]="getSkillColor(skillId)" [style.color]="getSkillColor(skillId)">
+                        {{ getSkillLabel(skillId) }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

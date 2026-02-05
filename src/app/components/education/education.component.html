@@ -1,0 +1,15 @@
+<section id="education" class="education-section">
+    <h2 class="section-title">Mon Parcours</h2>
+
+    <div class="timeline">
+        <div class="timeline-item" *ngFor="let item of educationList">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+                <span class="period">{{ item.period }}</span>
+                <h3 class="degree">{{ item.degree }}</h3>
+                <h4 class="institution">{{ item.institution }}</h4>
+                <p class="description">{{ item.description }}</p>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,49 @@
+<div class="detail-page" *ngIf="project">
+    <a routerLink="/" fragment="projects" class="back-link">
+        <span class="arrow">←</span> Retour aux projets
+    </a>
+
+    <header class="project-header">
+        <div class="project-image" *ngIf="project.imageUrl">
+            <img [src]="project.imageUrl" [alt]="project.title">
+        </div>
+        <div class="project-info">
+            <span class="project-date" *ngIf="project.date">{{ project.date }}</span>
+            <h1 class="project-title">{{ project.title }}</h1>
+            <p class="project-description">{{ project.description }}</p>
+
+            <div class="technologies" *ngIf="project.technologies?.length">
+                <h3>Technologies utilisées</h3>
+                <div class="tech-list">
+                    <span class="tech-badge" *ngFor="let tech of project.technologies">
+                        {{ tech }}
+                    </span>
+                </div>
+            </div>
+
+            <a *ngIf="project.link" [href]="project.link" target="_blank" class="project-link">
+                Voir le projet →
+            </a>
+        </div>
+    </header>
+
+    <section class="related-skills">
+        <h2 class="section-title">Compétences mobilisées</h2>
+
+        <div class="skills-grid">
+            <a *ngFor="let skill of relatedSkills" [routerLink]="['/skill', skill.id]" class="skill-card"
+                [style.--accent]="skill.color">
+                <div class="skill-icon">
+                    <span>{{ skill.label.charAt(0) }}</span>
+                </div>
+                <h3 class="skill-title">{{ skill.label }}</h3>
+                <p class="skill-description">{{ skill.description }}</p>
+            </a>
+        </div>
+    </section>
+</div>
+
+<div class="not-found" *ngIf="!project">
+    <h1>Projet introuvable</h1>
+    <a routerLink="/" class="back-link">Retour à l'accueil</a>
+</div>

@@ -1,0 +1,10 @@
+<div class="filter-container">
+    <p class="filter-label">Filtrer par compétence du BUT :</p>
+    <div class="skills-list">
+        <button *ngFor="let skill of skills" class="skill-btn" [class.selected]="selectedSkillId === skill.id"
+            [class.dimmed]="selectedSkillId !== null && selectedSkillId !== skill.id"
+            [style.--skill-color]="skill.color" (click)="selectSkill(skill.id)">
+            {{ skill.label }}
+        </button>
+    </div>
+</div>

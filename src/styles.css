@@ -1,0 +1,104 @@
+/* Global Styles */
+:root {
+  /* Charte Graphique BUT - Compétences */
+  --color-realiser: #B80905;
+  --color-optimiser: #ED8C51;
+  --color-administrer: #EFBA11;
+  --color-gerer: #8CC850;
+  --color-conduire: #0A215E;
+  --color-collaborer: #0F0F0F;
+
+  /* Theme Premium Dark */
+  --bg-primary: #050505;
+  --bg-secondary: #0f0f0f;
+  --bg-card: #141414;
+
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-muted: #666666;
+
+  --accent-color: #3b82f6;
+  --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --border-radius: 16px;
+  --transition-speed: 0.3s;
+  --nav-height: 80px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image:
+    radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(184, 9, 5, 0.05) 0%, transparent 25%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+section {
+  padding: 6rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-speed);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

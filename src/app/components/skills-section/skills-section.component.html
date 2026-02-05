@@ -1,0 +1,14 @@
+<section id="skills" class="skills-section">
+    <h2 class="section-title">Compétences du BUT</h2>
+
+    <div class="skills-grid">
+        <a class="skill-card" *ngFor="let skill of skills" [style.--accent]="skill.color"
+            [routerLink]="['/skill', skill.id]">
+            <div class="icon-box">
+                <span>{{ skill.label.charAt(0) }}</span>
+            </div>
+            <h3 class="skill-title">{{ skill.label }}</h3>
+            <p class="skill-desc">{{ skill.description }}</p>
+        </a>
+    </div>
+</section>

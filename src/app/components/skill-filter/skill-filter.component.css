@@ -1,0 +1,50 @@
+.filter-container {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.filter-label {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.skill-btn {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid var(--skill-color);
+    padding: 0.5rem 1.2rem;
+    border-radius: 100px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+.skill-btn:hover {
+    background-color: var(--skill-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.skill-btn.selected {
+    background-color: var(--skill-color);
+    box-shadow: 0 0 15px var(--skill-color);
+    transform: scale(1.05);
+}
+
+.skill-btn.dimmed {
+    opacity: 0.4;
+    border-color: #333;
+    /* Fallback or neutral color when dimmed? Or keep color but low opacity */
+    border-color: var(--skill-color);
+}

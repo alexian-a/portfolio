@@ -1,0 +1,101 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background: rgba(5, 5, 5, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: var(--text-secondary);
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.nav-links li a:hover {
+    color: var(--text-primary);
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+.cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--accent-color), #6366f1);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cv-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        /* Mobile menu implementation usually requires more logic/state */
+    }
+
+    .cv-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+}

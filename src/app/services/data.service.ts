@@ -61,6 +61,15 @@ export class DataService {
       skillIds: ['realiser', 'optimiser'],
       technologies: ['JavaFX', 'Java', 'Scene Builder'],
       date: 'Mai 2024'
+    },
+        {
+      id: 'p6',
+      title: 'Gestion Universitaire',
+      description: "Développement d'un site de gestion universitaire en PHP avec le framework Symfony, permettant la gestion des étudiants, des diplômes, et des inscriptions. Intégration d'une base de données MySQL pour stocker les informations et utilisation de Twig pour le rendu des pages.",
+      imageUrl: 'assets/projects/symfony.png',
+      skillIds: ['realiser', 'gerer', 'conduire'],
+      technologies: ['PHP', 'Symfony', 'MySQL', 'Twig'],
+      date: 'Décembre 2025'
     }
   ];
 

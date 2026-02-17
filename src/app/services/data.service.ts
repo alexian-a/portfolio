@@ -23,8 +23,44 @@ export class DataService {
       description: "Développement de plusieurs plugins, consultation de différentes oeuvres de l'association 'Les amis de Virebent'.",
       imageUrl: 'assets/projects/virebent.jpg',
       skillIds: ['realiser', 'gerer', 'conduire', 'collaborer'],
-      technologies: ['HTML', 'CSS', 'PHP', 'SQL', 'MySQL'],
+      technologies: ['HTML', 'CSS', 'PHP', 'SQL', 'MySQL', 'JavaScript'],
       date: '2025 - 2026'
+    },
+    {
+      id: 'p2',
+      title: 'Site e-commerce',
+      description: "Développement en php d'un site e-commerce de vente de matériel de sport, avec une base de données MySQL pour gérer les produits, les utilisateurs et les commandes.",
+      imageUrl: 'assets/projects/larouetourne.png',
+      skillIds: ['collaborer', 'conduire', 'optimiser', 'realiser'],
+      technologies: ['HTML', 'CSS', 'PHP', 'SQL', 'MySQL', 'JavaScript' ],
+      date: 'Janvier 2025'
+    },
+    {
+      id: 'p3',
+      title: 'FlopEDT',
+      description: "Développement Back-end Python avec Django\nCréation d'interfaces utilisateur réactives avec Vue.js",
+      imageUrl: 'assets/projects/flopedt.webp',
+      skillIds: ['realiser', 'administrer', 'gerer'],
+      technologies: ['Vue', 'Django'],
+      date: 'Mai 2025'
+    },
+    {
+      id: 'p4',
+      title: 'Application de gestion bancaire',
+      description: "Développement d'une application de gestion bancaire en JavaFX avec une base de données SQL Server.\nImplémentation de fonctionnalités telles que la gestion des comptes, les transactions, et la sécurité des données.",
+      imageUrl: 'assets/projects/JavaFX.png',
+      skillIds: ['realiser', 'optimiser', 'gerer', 'collaborer'],
+      technologies: ['JavaFX', 'Oracle DB', 'sqlserver'],
+      date: 'Juin 2024'
+    },
+    {
+      id: 'p5',
+      title: 'Jeu Akari',
+      description: "Développement d’une interface graphique pour le jeu de réflexion Akari, avec des fonctionnalités telles que la génération de grilles, la validation des solutions, et une interface utilisateur intuitive.",
+      imageUrl: 'assets/projects/akari.png',
+      skillIds: ['realiser', 'optimiser'],
+      technologies: ['JavaFX', 'Java', 'Scene Builder'],
+      date: 'Mai 2024'
     }
   ];
 
